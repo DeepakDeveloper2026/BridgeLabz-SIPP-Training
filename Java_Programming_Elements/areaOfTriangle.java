@@ -1,6 +1,7 @@
 import java.util.*;
 public class areaOfTriangle {
     public static void main(String[] args) {
+        //Scanner 
         Scanner sc = new Scanner(System.in);
         double base = sc.nextInt();
         double height = sc.nextInt();
