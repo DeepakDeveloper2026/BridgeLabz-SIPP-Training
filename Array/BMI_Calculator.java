@@ -28,7 +28,7 @@ public class Question12_BMI_Calculator {
             personData[i][0] = height;
             personData[i][1] = weight;
             personData[i][2] = bmi;
-
+            //conditions
             if (bmi < 18.5)
                 weightStatus[i] = "Underweight";
             else if (bmi < 25)
