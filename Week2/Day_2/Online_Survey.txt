@@ -1,0 +1,24 @@
+class SurveyResponse {
+    restaurantName, rating
+}
+
+responses = [
+    SurveyResponse("PizzaHut",4),
+    SurveyResponse("PizzaHut",5),
+    SurveyResponse("KFC",3),
+    SurveyResponse("KFC",4),
+    SurveyResponse("Subway",5),
+    SurveyResponse("Subway",4),
+    SurveyResponse("Subway",5)
+]
+
+grouped = groupBy(responses.restaurantName, average(responses.rating))
+
+for entry in grouped:
+    print entry.key, entry.value
+
+maxRestaurant = maxBy(grouped)
+minRestaurant = minBy(grouped)
+
+print "Best:", maxRestaurant
+print "Needs Improvement:", minRestaurant

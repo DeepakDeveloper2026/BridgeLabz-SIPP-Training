@@ -1,0 +1,29 @@
+class Ticket {
+    movieName, seatNumber, price, status
+}
+
+class Theatre {
+    movies, availableSeats
+    issueTicket(movie, seat, price):
+        if seat in availableSeats:
+            ticket = new Ticket(movie, seat, price, "Booked")
+            remove seat from availableSeats
+            return ticket
+        return null
+    cancelTicket(ticket):
+        ticket.status = "Cancelled"
+        add ticket.seatNumber to availableSeats
+}
+
+class Customer {
+    name
+    book(theatre, movie, seat, price):
+        return theatre.issueTicket(movie, seat, price)
+    cancel(theatre, ticket):
+        theatre.cancelTicket(ticket)
+}
+
+theatre = new Theatre()
+customer = new Customer("Ravi")
+ticket = customer.book(theatre,"Avengers", "A12", 250)
+customer.cancel(theatre, ticket)

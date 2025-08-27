@@ -1,0 +1,10 @@
+text = "The news today is about the rise in technology trends."
+words = process(text) // lowercase, remove punctuation, split
+map = Map<String,Integer>()
+
+for word in words:
+    map[word] = map.getOrDefault(word,0) + 1
+
+sortedWords = sortByValue(map)
+for entry in sortedWords:
+    print entry.key, entry.value

@@ -1,0 +1,24 @@
+class User {
+    username, password
+    login()
+}
+
+class Student extends User {
+    enrolledCourses
+    login():
+        if credentialsValid and enrolledCourses not empty:
+            print "Student logged in"
+        else:
+            print "Access denied"
+}
+
+class Admin extends User {
+    privileges
+    login():
+        if credentialsValid and privileges.contains("admin"):
+            print "Admin logged in"
+        else:
+            print "Access denied"
+}
+
+s = new Student("john123","p

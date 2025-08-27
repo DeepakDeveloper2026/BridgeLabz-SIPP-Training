@@ -1,0 +1,29 @@
+attendance[30][30]
+
+markAttendance(student,day,value):
+    attendance[student][day] = value
+
+dailySummary(day):
+    count = 0
+    for student in 0..29:
+        if attendance[student][day] == 1: count++
+    return count
+
+monthlySummary(student):
+    count = 0
+    for day in 0..29:
+        if attendance[student][day] == 1: count++
+    return count
+
+defaulterList():
+    list = []
+    for student in 0..29:
+        present = monthlySummary(student)
+        if present < 22: list.add(student)
+    return list
+
+markAttendance(1,1,1)
+markAttendance(3,1,0)
+print dailySummary(10)
+print monthlySummary(5)
+print defaulterList()

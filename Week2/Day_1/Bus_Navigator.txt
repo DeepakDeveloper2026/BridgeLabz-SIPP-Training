@@ -1,0 +1,16 @@
+class Node {
+    stopName
+    next
+}
+
+class LinkedList {
+    head
+    insertAfter(prevStop, newStop)
+    delete(stopName)
+    search(stopName)
+}
+
+route = new LinkedList()
+route.insertAfter("City Mall","University")
+route.delete("Hospital")
+if route.search("Airport"): print "Found"

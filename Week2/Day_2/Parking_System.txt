@@ -1,0 +1,30 @@
+class Vehicle {
+    vehicleNumber, entryTime
+    calculateFee(exitTime)
+}
+
+class Car extends Vehicle {
+    calculateFee(exitTime):
+        hours = ceil(exitTime - entryTime)
+        return 50 + (hours-1)*30
+}
+
+class Bike extends Vehicle {
+    calculateFee(exitTime):
+        hours = ceil(exitTime - entryTime)
+        return 20 + (hours-1)*10
+}
+
+class Truck extends Vehicle {
+    calculateFee(exitTime):
+        hours = ceil(exitTime - entryTime)
+        return 100 + (hours-1)*50
+}
+
+v1 = new Car("KA05AB1234",10:00)
+v2 = new Bike("KA05XY7890",11:15)
+v3 = new Truck("KA09TR5566",09:30)
+
+print v1.calculateFee(13:30)
+print v2.calculateFee(12:00)
+print v3.calculateFee(14:00)

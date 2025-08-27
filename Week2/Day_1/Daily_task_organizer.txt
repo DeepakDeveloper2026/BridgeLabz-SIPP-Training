@@ -1,0 +1,15 @@
+tasks = LinkedHashMap<Integer,String>()
+id = 1
+addTask(desc):
+    tasks[id] = desc
+    id++
+removeTask(taskId):
+    tasks.remove(taskId)
+viewTasks():
+    for entry in tasks: print entry.key, entry.value
+
+addTask("Check emails")
+addTask("Prepare sales report")
+addTask("Call client")
+removeTask(2)
+viewTasks()

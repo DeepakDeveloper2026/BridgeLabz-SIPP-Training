@@ -1,0 +1,10 @@
+text = "Sports bring people together. Sports inspire teamwork. Sports create leaders."
+words = process(text)
+map = Map<String,Integer>()
+
+for word in words:
+    map[word] = map.getOrDefault(word,0) + 1
+
+sortedWords = sortByValue(map)
+for entry in sortedWords:
+    print entry.key, entry.value
